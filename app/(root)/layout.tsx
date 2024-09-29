@@ -1,15 +1,19 @@
-// import { BackToTop } from "@/components/back-to-top";
-// import { Footer } from "@/components/footer";
-import { Navbar } from "@/components/navbar";
+import "../../public/index.css"
+import Sidebar from '@/components/Sidebar'
 
-export default function Layout({ children }: React.PropsWithChildren) {
+export default function Layout({children}: React.PropsWithChildren) {
+
   return (
-    <>
-      <Navbar />
-      <main className="min-h-[calc(100vh-190px)]">{children}</main>
-      {/* <Footer /> */}
-
-      {/* <BackToTop /> */}
-    </>
-  );
+    <html lang="en">
+      <body>
+        <div className="container">
+          <div className="main">
+            <Sidebar />
+            <section className="col note-viewer">{children}</section>
+          </div>
+        </div>
+      </body>
+    </html>
+  )
 }
+
