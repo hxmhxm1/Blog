@@ -365,6 +365,10 @@ ul.notes-list {
   cursor: default;
   transition: visibility 0s linear 20ms, opacity 300ms;
   outline-style: none;
+  flex-basis: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sidebar-note-toggle-expand:focus {
   box-shadow: var(--outline-box-shadow);
