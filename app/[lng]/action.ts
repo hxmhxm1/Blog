@@ -25,3 +25,4 @@ export async function deleteNote(noteId) {
   delNote(noteId)
   redirect('/')
 }
+// console.log('111')
