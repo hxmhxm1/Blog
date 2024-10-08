@@ -13,7 +13,7 @@ function Spinner({active = true}) {
   );
 }
 
-export default async function SidebarSearchField({lng}:{lng: string}) {
+export default function SidebarSearchField({lng}:{lng: string}) {
   const { replace } = useRouter()
   const pathname = usePathname()
   const [isPending, startTransition] = useTransition()

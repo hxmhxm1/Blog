@@ -6,7 +6,7 @@ import { initReactI18next, useTranslation as useTranslationOrg, UseTranslationOp
 import { useCookies } from 'react-cookie'
 import resourcesToBackend from 'i18next-resources-to-backend'
 import LanguageDetector from 'i18next-browser-languagedetector'
-import { locales, defaultLocale } from '@/config.js'
+import { locales, defaultLocale } from '@/config'
 export const cookieName = 'i18next'
 
 const runsOnServerSide = typeof window === 'undefined'
@@ -14,7 +14,7 @@ const runsOnServerSide = typeof window === 'undefined'
 i18next
   .use(initReactI18next)
   .use(LanguageDetector)
-  .use(resourcesToBackend((language: any, namespace: any) => import(`./locales/${language}/${namespace}.json`)))
+  .use(resourcesToBackend((language: any, namespace: any) => import(`./locals/${language}/index.json`)))
   .init({
     supportedLngs: locales,
     fallbackLng: defaultLocale,

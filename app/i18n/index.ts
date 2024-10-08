@@ -7,7 +7,7 @@ const initI18next = async (lng = defaultLocale, ns = 'basic') => {
   const i18nInstance = createInstance()
   await i18nInstance
     .use(initReactI18next)
-    .use(resourcesToBackend((language, namespace) => import(`./locals/${language}/${namespace}.json`)))
+    .use(resourcesToBackend((language, namespace) => import(`./locals/${language}/index.json`)))
     .init({
       // debug: true,
       supportedLngs: locales,

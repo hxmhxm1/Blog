@@ -1,4 +1,4 @@
-import { useTranslation } from "../i18n"
+import { useTranslation } from "../i18n/index"
 
 export default async function Page({ params: { lng } }) {
   const { t } = await useTranslation(lng)
