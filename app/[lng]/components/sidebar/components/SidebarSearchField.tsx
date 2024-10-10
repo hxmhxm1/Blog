@@ -36,7 +36,7 @@ export default function SidebarSearchField({lng}:{lng: string}) {
     <div className="search" role="search">
       <input
         id="sidebar-search-input"
-        placeholder="Search"
+        placeholder={t('search')}
         type="text"
         onChange={(e) => handleSearch(e.target.value)}
       />

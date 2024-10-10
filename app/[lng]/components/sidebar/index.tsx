@@ -6,6 +6,7 @@ import NoteListSkeleton from './components/NoteListSkeleton';
 import SidebarNoteList from './components/SidebarNoteList';
 import SidebarSearchField from './components/SidebarSearchField';
 import { useTranslation } from '@/app/i18n';
+import SidebarImport from './components/SidebarImport.';
 
 export default async function Sidebar({lng}) {
   const notes = await getAllNotes()
@@ -25,6 +26,7 @@ export default async function Sidebar({lng}) {
             <SidebarNoteList />
           </Suspense>
         </nav>
+        <SidebarImport />
       </section>
     </>
   )

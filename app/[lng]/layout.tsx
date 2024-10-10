@@ -5,6 +5,7 @@ import Sidebar from "./components/sidebar";
 import "./globals.css";
 import "../../public/index.css"
 import { Footer } from "./components/Footer";
+import Header from "./components/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -39,6 +40,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="container">
+          <Header />
           <div className="main">
             <Sidebar lng={lng} />
             <section className="col note-viewer">{children}</section>

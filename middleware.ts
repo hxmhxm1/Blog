@@ -2,6 +2,7 @@
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { locales, defaultLocale } from '@/config.ts'
+import { auth } from './auth'
 
 const publicFile = /\.(.*)$/
 
@@ -11,9 +12,9 @@ function getLocale(request) {
   const languages = new Negotiator({ headers }).languages();
 
   return match(languages, locales, defaultLocale)
- }
- 
-export function middleware(request) {
+}
+
+export default auth((request) => {
   const { pathname } = request.nextUrl
   // 判断请求路径中是否已存在语言，已存在语言则跳过
   const pathnameHasLocale = locales.some(
@@ -30,9 +31,12 @@ export function middleware(request) {
   request.nextUrl.pathname = `/${locale}${pathname}`
   // 重定向，如 /products 重定向到 /en-US/products
   return Response.redirect(request.nextUrl)
-}
+})
+
+// export default auth
  
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 }
+
 
